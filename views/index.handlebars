@@ -1,0 +1,21 @@
+<h1 class="text-center mb-3">{{title}}</h1>
+<form action="/api/students" method="POST" class="mb4">
+<div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" name="name" class="form-control">
+</div>
+<div class="form-group">
+    <label for="email">email</label>
+    <input type="email" name="email" class="form-control">
+</div>
+<input type="submit" value="add student" class="btn btn-primary btn-block">
+</form>
+
+<h4>Available Students</h4>
+
+<ul class="list-group">
+    {{#each students}}
+        <li class="list-group-item">{{this.name}}:{{this.email}}</li>
+    {{/each}}
+</ul>
+<a href="/api/students/" class="btn btn-dark mt4">See Records in JSON</a>
